@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState } from "react"
 
 export default function Section({
   title,
   inputs = [{ id: "id", name: "name" }],
 }) {
-  const [dropped, setDropped] = useState(false);
+  const [dropped, setDropped] = useState(false)
+
+  const handleInputChange = (id, value) => {
+    document.querySelector(`.${id}`).textContent = value
+  }
 
   return (
     <>
@@ -12,7 +16,7 @@ export default function Section({
         <button
           className="dropdownbtn"
           onClick={() => {
-            dropped ? setDropped(false) : setDropped(true);
+            dropped ? setDropped(false) : setDropped(true)
           }}
         >
           {dropped ? (
@@ -55,12 +59,16 @@ export default function Section({
             return (
               <li key={input.id}>
                 <label htmlFor={input.id}>{input.name}</label>
-                <input type="text" id={input.id} />
+                <input
+                  type="text"
+                  id={input.id}
+                  onChange={(e) => handleInputChange(input.id, e.target.value)}
+                />
               </li>
-            );
+            )
           })}
         </ul>
       ) : null}
     </>
-  );
+  )
 }

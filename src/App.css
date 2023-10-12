@@ -11,13 +11,57 @@ h2 {
   align-items: end;
 }
 
-main div {
-  width: 40%; 
+.preview h2 {
+  
+  font-size: 36px;
 }
 
 .preview {
   background-color: white;
-  height: 720px;
+  height: 1000px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  width: 55%;
+}
+
+.preview h3 {
+  margin: 24px 0 0 0;
+  border-bottom: 1px solid black;
+  font-size: 28px;
+}
+
+.preview p {
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+.preview > div {
+  box-sizing: border-box;
+  width: 88%;
+}
+
+.preview > div > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.time-location {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+
+.professional-experience {
+  margin-top: 5%;
+}
+
+.professional-experience .description {
+  margin: -4px 0;
+  font-size: 14px;
 }
 
 .panel {
@@ -26,6 +70,7 @@ main div {
   padding: 24px 36px;
   box-sizing: border-box;
   height: fit-content;
+  width: 40%;
 }
 
 .panel ul {
@@ -56,4 +101,24 @@ input {
 
 .dropdownbtn:hover {
   color: gray;
+}
+
+header {
+  width: 100%;
+  height: 120px;
+  box-sizing: border-box;
+  padding: 24px 0;
+  background-color: cadetblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color: white;
+
+}
+
+header div {
+  display: flex;
+  width: 95%;
+  justify-content: space-around;
 }
