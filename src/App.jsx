@@ -1,14 +1,29 @@
-import "./App.css"
-import Section from "./components/Section"
+import { useState } from "react";
+import Section2 from "./components/Section"
+import Preview from "./components/Preview";
 
 function App() {
+  const [generalData, setGeneralData] = useState(null);
+  const [educationData, setEducationData] = useState(null);
+  const [professionalData, setProfessionalData] = useState(null);
+
+  const generalInputs = ["full-name", "e-mail", "phone", "location"]
+  const educationInputs = ["degree", "school", "time"]
+  const professionalInputs = ["job", "company", "time", "description"]
+
+  const handleSave = (data) => {
+    if (data.title === "General Information") setGeneralData(data)
+    else if (data.title === "Education") setEducationData(data)
+    else if (data.title === "Professional Experience") setProfessionalData(data)
+  }
+
   return (
     <main>
       <div className="panel">
-        <Section
-          title="General Information"
+        {/* <Section
+          title="General In1ormation"
           inputs={[
-            { id: "fullname", name: "Full name" },
+            { id: "1ullname", name: "Full name" },
             { id: "email", name: "E-Mail" },
             { id: "phone", name: "Phone" },
             { id: "location", name: "Location (city, country)" },
@@ -32,49 +47,13 @@ function App() {
             { id: "location3", name: "Location"},
             { id: "description", name: "Description" },
           ]}
-        ></Section>
+        ></Section> */}
+        <Section2 title="General Information" inputs={generalInputs} onSave={handleSave}/>
+        <Section2 title="Education" inputs={educationInputs} />
+        <Section2 title="Professional Experience" inputs={professionalInputs} />
       </div>
 
-      <div className="preview">
-        <header>
-          <h2 className="fullname"></h2>
-          <div>
-            <span className="email"></span>
-            <span className="phone"></span>
-            <span className="location"></span>
-          </div>
-        </header>
-        <div>
-          <h3>Education</h3>
-          <div>
-            <p>
-              <b className="degree">Degree</b>,{" "}
-              <i className="school">School</i>
-            </p>
-            <p className="time-location">
-              <b className="time">dec 2007 - dec 2107</b> {" "}
-              <span className="location2">Location</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="professional-experience">
-          <h3>Professional Experience</h3>
-          <div>
-            <p>
-              <b className="job">Job</b>,{" "}
-              <i className="company">Company</i>
-            </p>
-            <p className="time-location">
-              <b className="time2">dec 2007 - dec 2107</b> {" "}
-              <span className="location3">Location</span>
-            </p>
-          </div>
-          <p className="description">
-            description
-          </p>
-        </div>
-      </div>
+      <Preview generalData={generalData} educationData={educationData} professionalData={professionalData}/>
     </main>
   )
 }
