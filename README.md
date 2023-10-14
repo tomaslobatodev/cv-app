@@ -1,6 +1,11 @@
 # cv-app
 
 To do:
+- preview styles
+- edit education & professional experience
 - responsive design
-- add more education and professional experience cards
+- clear resume
+- load example
+
 - download as pdf
+- modify color, font, etc.

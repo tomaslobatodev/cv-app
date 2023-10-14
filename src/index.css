@@ -9,17 +9,33 @@
 
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main {
-  padding: 36px 1%;
-  box-sizing: border-box;
   display: flex;
-  justify-content: space-evenly;
+  gap: 36px;
+  max-width: 1500px;
+  padding: 32px 16px;
+  width: 100%;
 }
 
 h2 {
   margin: 8px 0;
   display: flex;
   align-items: end;
+}
+
+.panel {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 24px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 750px;
+  flex-direction: column;
 }

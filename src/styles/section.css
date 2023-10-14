@@ -1,18 +1,8 @@
-.panel {
-  border-radius: 16px;
-  padding: 24px 36px;
-  box-sizing: border-box;
-  height: fit-content;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.panel > div {
+.section {
   background-color: #181818;
   border-radius: 8px;
   padding: 8px;
+  padding-bottom: 16px;
 }
 
 .panel ul {

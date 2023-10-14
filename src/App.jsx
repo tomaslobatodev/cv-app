@@ -1,59 +1,101 @@
-import { useState } from "react";
-import Section2 from "./components/Section"
-import Preview from "./components/Preview";
+import { useState } from "react"
+import Preview from "./components/Preview"
+import GeneralInformation from "./components/GeneralInf"
+import Education from "./components/Education"
+import { v4 as uuidv4 } from "uuid"
+import ProfessionalExp from "./components/ProfessionalExp"
 
 function App() {
-  const [generalData, setGeneralData] = useState(null);
-  const [educationData, setEducationData] = useState(null);
-  const [professionalData, setProfessionalData] = useState(null);
+  const [education, setEducation] = useState([])
+  const [profExp, setProfExp] = useState([])
 
-  const generalInputs = ["full-name", "e-mail", "phone", "location"]
-  const educationInputs = ["degree", "school", "time"]
-  const professionalInputs = ["job", "company", "time", "description"]
+  const [fullname, setFullname] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [location, setLocation] = useState("")
 
-  const handleSave = (data) => {
-    if (data.title === "General Information") setGeneralData(data)
-    else if (data.title === "Education") setEducationData(data)
-    else if (data.title === "Professional Experience") setProfessionalData(data)
+  const [degree, setDegree] = useState("")
+  const [school, setSchool] = useState("")
+  const [time, setTime] = useState("")
+  const [location2, setLocation2] = useState("")
+
+  const [job, setJob] = useState("")
+  const [company, setCompany] = useState("")
+  const [time2, setTime2] = useState("")
+  const [location3, setLocation3] = useState("")
+  const [desc, setDesc] = useState("")
+
+  const saveEducation = () => {
+    const data = {
+      id: uuidv4(),
+      degree,
+      school,
+      time,
+      location2,
+    }
+
+    setEducation([...education, data])
+  }
+
+  const saveProfessionalExp = () => {
+    const data = {
+      id: uuidv4(),
+      job,
+      company,
+      time2,
+      location3,
+      desc,
+    }
+
+    setProfExp([...profExp, data])
   }
 
   return (
     <main>
       <div className="panel">
-        {/* <Section
-          title="General In1ormation"
-          inputs={[
-            { id: "1ullname", name: "Full name" },
-            { id: "email", name: "E-Mail" },
-            { id: "phone", name: "Phone" },
-            { id: "location", name: "Location (city, country)" },
-          ]}
+        <GeneralInformation
+          fullname={fullname}
+          email={email}
+          phone={phone}
+          location={location}
+          setFullname={setFullname}
+          setEmail={setEmail}
+          setPhone={setPhone}
+          setLocation={setLocation}
         />
-        <Section
-          title="Education"
-          inputs={[
-            { id: "degree", name: "Degree" },
-            { id: "school", name: "School" },
-            { id: "location2", name: "Location" },
-            { id: "time", name: "Time (jan 2000 - oct 2023)"}
-          ]}
-        ></Section>
-        <Section
-          title="Professional Experience"
-          inputs={[
-            { id: "job", name: "Job" },
-            { id: "company", name: "Company" },
-            { id: "time2", name: "Time"},
-            { id: "location3", name: "Location"},
-            { id: "description", name: "Description" },
-          ]}
-        ></Section> */}
-        <Section2 title="General Information" inputs={generalInputs} onSave={handleSave}/>
-        <Section2 title="Education" inputs={educationInputs} />
-        <Section2 title="Professional Experience" inputs={professionalInputs} />
+        <Education
+          degree={degree}
+          setDegree={setDegree}
+          school={school}
+          setSchool={setSchool}
+          time={time}
+          setTime={setTime}
+          location={location2}
+          setLocation={setLocation2}
+          save={saveEducation}
+        />
+        <ProfessionalExp
+          job={job}
+          setJob={setJob}
+          company={company}
+          setCompany={setCompany}
+          time={time2}
+          setTime={setTime2}
+          location={location3}
+          setLocation={setLocation3}
+          desc={desc}
+          setDesc={setDesc}
+          save={saveProfessionalExp}
+        />
       </div>
-
-      <Preview generalData={generalData} educationData={educationData} professionalData={professionalData}/>
+      <Preview
+        fullname={fullname}
+        email={email}
+        phone={phone}
+        location={location}
+        education={education}
+        profExp={profExp}
+      />
     </main>
   )
 }
