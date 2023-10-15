@@ -1,7 +1,6 @@
 # cv-app
 
 To do:
-- preview styles
 - edit education & professional experience
 - responsive design
 - clear resume

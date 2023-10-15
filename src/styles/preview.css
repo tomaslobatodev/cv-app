@@ -3,4 +3,95 @@
   height: 1200px;
   background-color: white;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview h1 {
+  margin: 8px;
+  font-size: 40px
+}
+
+.preview header {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.preview header div {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.preview header .icon {
+  width: 16px;
+}
+
+
+
+.sec {
+  width: 90%;
+  min-height: 80px;
+}
+
+.sec h2 {
+  font-size: 30px;
+  border-bottom: 3px solid black;
+}
+
+.sec ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px
+}
+
+.sec li {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.sec li h3 {
+  margin: 0;
+  font-weight:400;
+}
+
+.sec li span {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.sec div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lisec2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.lisec2 p {
+  margin: 0;
+  font-size: 14px;
 }

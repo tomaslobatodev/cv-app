@@ -35,6 +35,8 @@ function App() {
     }
 
     setEducation([...education, data])
+
+    console.log(education)
   }
 
   const saveProfessionalExp = () => {
@@ -48,6 +50,8 @@ function App() {
     }
 
     setProfExp([...profExp, data])
+
+    console.log(profExp)
   }
 
   return (

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import "../styles/preview.css"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 export default function Preview({
   fullname,
@@ -14,30 +15,58 @@ export default function Preview({
       <header>
         <h1>{fullname}</h1>
         <div>
-          <span>{email}</span>
-          <span>{phone}</span>
-          <span>{location}</span>
+          {email && (
+            <span>
+              <Mail className="icon"/>
+              {email}
+            </span>
+          )}
+
+          {phone && (
+            <span>
+              <Phone className="icon"/>
+              {phone}
+            </span>
+          )}
+
+          {location && (
+            <span>
+              <MapPin className="icon"/>
+              {location}
+            </span>
+          )}
         </div>
       </header>
-      <div className="">
+
+
+      <div className="sec">
         <h2>Education</h2>
+        <ul>
         {education
           ? education.map((card) => (
-              <div key={card.id}>
-                {card.degree}, {card.school} <br />
-              </div>
+              <li key={card.id}>
+                <h3><b>{card.degree}</b>, <i>{card.school}</i></h3>
+                <span>{card.time} <b>{card.location2}</b></span>
+              </li>
             ))
           : null}
+        </ul>
       </div>
-      <div className="">
+      <div className="sec">
         <h2>Professional Experience</h2>
+        <ul>
         {profExp
           ? profExp.map((card) => (
-              <div key={card.id}>
-                {card.job}, {card.company} <br />
-              </div>
+              <li key={card.id} className="lisec2">
+                <div>
+                  <h3><b>{card.job}</b>, <i>{card.company}</i></h3>
+                  <span>{card.time2} <b>{card.location3}</b></span>
+                </div>
+                <p>{card.desc}</p>
+              </li>
             ))
           : null}
+        </ul>
       </div>
     </div>
   )
