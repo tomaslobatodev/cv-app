@@ -51,7 +51,7 @@ span {
 }
 
 .sec h2 {
-  font-size: 30px;
+  font-size: 28px;
   border-bottom: 3px solid black;
 }
 
@@ -71,7 +71,7 @@ span {
 
 .sec li h3 {
   margin: 0;
-  font-weight:400;
+  font-weight: 400;
 }
 
 .sec li span {

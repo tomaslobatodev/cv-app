@@ -17,57 +17,65 @@ export default function Preview({
         <div>
           {email && (
             <span>
-              <Mail className="icon"/>
+              <Mail className="icon" />
               {email}
             </span>
           )}
 
           {phone && (
             <span>
-              <Phone className="icon"/>
+              <Phone className="icon" />
               {phone}
             </span>
           )}
 
           {location && (
             <span>
-              <MapPin className="icon"/>
+              <MapPin className="icon" />
               {location}
             </span>
           )}
         </div>
       </header>
 
-
-      <div className="sec">
-        <h2>Education</h2>
-        <ul>
-        {education
-          ? education.map((card) => (
+      {education.length !== 0 && (
+        <div className="sec">
+          <h2>Education</h2>
+          <ul>
+            {education.map((card) => (
               <li key={card.id}>
-                <h3><b>{card.degree}</b>, <i>{card.school}</i></h3>
-                <span>{card.time} <b>{card.location2}</b></span>
+                <h3>
+                  <b>{card.degree}</b>, <i>{card.school}</i>
+                </h3>
+                <span>
+                  {card.time} <b>{card.location2}</b>
+                </span>
               </li>
-            ))
-          : null}
-        </ul>
-      </div>
-      <div className="sec">
-        <h2>Professional Experience</h2>
-        <ul>
-        {profExp
-          ? profExp.map((card) => (
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {profExp.length !== 0 && (
+        <div className="sec">
+          <h2>Professional Experience</h2>
+          <ul>
+            {profExp.map((card) => (
               <li key={card.id} className="lisec2">
                 <div>
-                  <h3><b>{card.job}</b>, <i>{card.company}</i></h3>
-                  <span>{card.time2} <b>{card.location3}</b></span>
+                  <h3>
+                    <b>{card.job}</b>, <i>{card.company}</i>
+                  </h3>
+                  <span>
+                    {card.time2} <b>{card.location3}</b>
+                  </span>
                 </div>
                 <p>{card.desc}</p>
               </li>
-            ))
-          : null}
-        </ul>
-      </div>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

@@ -41,7 +41,41 @@ input {
   padding: 8px 0;
   border-radius: 48px;
   border: none;
-  cursor: pointer;
-  width: 27%;
+  width: 32%;
   align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: rgb(27, 108, 207);
+}
+
+.savebtn:hover {
+  background-color: rgb(26, 90, 167);
+  cursor: pointer;
+}
+
+.section > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+  padding-bottom: 12px;
+  align-items: center;
+}
+
+.section > div > div {
+  background-color: #222222;
+  padding: 8px;
+  width: 90%;
+  border-radius: 8px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.editbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

@@ -76,6 +76,7 @@ function App() {
           setTime={setTime}
           location={location2}
           setLocation={setLocation2}
+          education={education}
           save={saveEducation}
         />
         <ProfessionalExp

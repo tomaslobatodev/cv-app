@@ -2,7 +2,16 @@ import PropTypes from "prop-types"
 import { useState } from "react"
 import "../styles/Section.css"
 
-export default function GeneralInformation({ fullname, setFullname, email, setEmail, phone, setPhone, location, setLocation}) {
+export default function GeneralInformation({
+  fullname,
+  setFullname,
+  email,
+  setEmail,
+  phone,
+  setPhone,
+  location,
+  setLocation,
+}) {
   const [dropped, setDropped] = useState(false)
 
   return (
@@ -50,51 +59,50 @@ export default function GeneralInformation({ fullname, setFullname, email, setEm
       </h2>
       {dropped ? (
         <ul>
-        <li>
-          <label htmlFor="fullname">Full Name</label>
-          <input
-            type="text"
-            id="fullname"
-            defaultValue={fullname}
-            onChange={(ev) => {
-              setFullname(ev.target.value)
-            }}
-          />
-        </li>
-        <li>
-          <label htmlFor="email">E-Mail</label>
-          <input
-            type="text"
-            id="email"
-            defaultValue={email}
-            onChange={(ev) => {
-              setEmail(ev.target.value)
-            }}
-          />
-        </li>
-        <li>
-          <label htmlFor="phone">Phone</label>
-          <input
-            type="text"
-            id="phone"
-            defaultValue={phone}
-            onChange={(ev) => {
-              setPhone(ev.target.value)
-            }}
-          />
-        </li>
-        <li>
-          <label htmlFor="location">Location (city, country)</label>
-          <input
-            type="text"
-            id="location"
-            defaultValue={location}
-            onChange={(ev) => {
-              setLocation(ev.target.value)
-            }}
-          />
-        </li>
-          
+          <li>
+            <label htmlFor="fullname">Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              defaultValue={fullname}
+              onChange={(ev) => {
+                setFullname(ev.target.value)
+              }}
+            />
+          </li>
+          <li>
+            <label htmlFor="email">E-Mail</label>
+            <input
+              type="text"
+              id="email"
+              defaultValue={email}
+              onChange={(ev) => {
+                setEmail(ev.target.value)
+              }}
+            />
+          </li>
+          <li>
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="text"
+              id="phone"
+              defaultValue={phone}
+              onChange={(ev) => {
+                setPhone(ev.target.value)
+              }}
+            />
+          </li>
+          <li>
+            <label htmlFor="location">Location (city, country)</label>
+            <input
+              type="text"
+              id="location"
+              defaultValue={location}
+              onChange={(ev) => {
+                setLocation(ev.target.value)
+              }}
+            />
+          </li>
         </ul>
       ) : null}
     </div>
@@ -111,4 +119,4 @@ GeneralInformation.propTypes = {
   location: PropTypes.string,
   setLocation: PropTypes.func,
   save: PropTypes.func,
-};
+}

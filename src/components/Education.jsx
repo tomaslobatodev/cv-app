@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
 import "../styles/Section.css"
+import { Check, PenSquare } from "lucide-react"
 
 export default function Education({
   degree,
@@ -11,6 +12,7 @@ export default function Education({
   setTime,
   location,
   setLocation,
+  education,
   save,
 }) {
   const [dropped, setDropped] = useState(false)
@@ -58,6 +60,18 @@ export default function Education({
         </button>
         Education
       </h2>
+      <div>
+        {education
+          ? education.map((card) => {
+              return (
+                <div key={card.id}>
+                  <span>{card.degree}, {card.school}</span>
+                  <button className="editbtn"><PenSquare /></button>
+                </div>
+              )
+            })
+          : null}
+      </div>
       {dropped ? (
         <ul>
           <li>
@@ -105,7 +119,7 @@ export default function Education({
             />
           </li>
           <button className="savebtn" onClick={() => save()}>
-            Save
+            Save <Check className="icon" />
           </button>
         </ul>
       ) : null}
@@ -115,6 +129,7 @@ export default function Education({
 
 Education.propTypes = {
   degree: PropTypes.string,
+  education: PropTypes.array,
   setDegree: PropTypes.func,
   school: PropTypes.string,
   setSchool: PropTypes.func,

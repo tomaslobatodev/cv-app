@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
 import "../styles/Section.css"
+import { Check } from "lucide-react"
 
 export default function ProfessionalExp({
   job,
@@ -74,7 +75,7 @@ export default function ProfessionalExp({
             />
           </li>
           <li>
-            <label htmlFor="company">company</label>
+            <label htmlFor="company">Company</label>
             <input
               type="text"
               id="company"
@@ -116,7 +117,7 @@ export default function ProfessionalExp({
             }}/>
           </li>
           <button className="savebtn" onClick={() => save()}>
-            Save
+            Save <Check />
           </button>
         </ul>
       ) : null}

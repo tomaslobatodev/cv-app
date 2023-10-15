@@ -2,7 +2,6 @@
 
 To do:
 - edit education & professional experience
-- responsive design
 - clear resume
 - load example
 
