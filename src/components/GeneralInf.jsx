@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
-import "../styles/Section.css"
+import "../styles/section.css"
 
 export default function GeneralInformation({
   fullname,
