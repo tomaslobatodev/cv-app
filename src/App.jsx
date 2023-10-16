@@ -40,11 +40,11 @@ export default function App() {
         location2,
       }
 
+      setEducation([...education, data])
       setDegree("")
       setSchool("")
       setTime("")
       setLocation2("")
-      setEducation([...education, data])
     }
   }
 
@@ -59,12 +59,12 @@ export default function App() {
         desc,
       }
 
+      setProfExp([...profExp, data])
       setJob("")
       setCompany("")
       setTime2("")
       setLocation3("")
       setDesc("")
-      setProfExp([...profExp, data])
     }
   }
 

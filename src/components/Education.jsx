@@ -5,9 +5,13 @@ import { Check, PenSquare, Trash2 } from "lucide-react"
 
 export default function Education({
   setDegree,
+  degree,
   setSchool,
+  school,
   setTime,
+  time,
   setLocation,
+  location,
   education,
   save,
   edit,
@@ -89,6 +93,7 @@ export default function Education({
             <input
               type="text"
               id="degree"
+              value={degree}
               onChange={(ev) => {
                 setDegree(ev.target.value)
               }}
@@ -99,6 +104,7 @@ export default function Education({
             <input
               type="text"
               id="school"
+              value={school}
               onChange={(ev) => {
                 setSchool(ev.target.value)
               }}
@@ -109,6 +115,7 @@ export default function Education({
             <input
               type="text"
               id="time"
+              value={time}
               onChange={(ev) => {
                 setTime(ev.target.value)
               }}
@@ -119,6 +126,7 @@ export default function Education({
             <input
               type="text"
               id="location"
+              value={location}
               onChange={(ev) => {
                 setLocation(ev.target.value)
               }}

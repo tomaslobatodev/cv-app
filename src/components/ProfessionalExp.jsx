@@ -5,6 +5,11 @@ import { Check, PenSquare, Trash2 } from "lucide-react"
 
 export default function ProfessionalExp({
   setJob,
+  job,
+  company,
+  time,
+  desc,
+  location,
   setCompany,
   setTime,
   setLocation,
@@ -90,6 +95,7 @@ export default function ProfessionalExp({
             <input
               type="text"
               id="job"
+              value={job}
               onChange={(ev) => {
                 setJob(ev.target.value)
               }}
@@ -100,6 +106,7 @@ export default function ProfessionalExp({
             <input
               type="text"
               id="company"
+              value={company}
               onChange={(ev) => {
                 setCompany(ev.target.value)
               }}
@@ -110,6 +117,7 @@ export default function ProfessionalExp({
             <input
               type="text"
               id="time"
+              value={time}
               onChange={(ev) => {
                 setTime(ev.target.value)
               }}
@@ -120,6 +128,7 @@ export default function ProfessionalExp({
             <input
               type="text"
               id="location"
+              value={location}
               onChange={(ev) => {
                 setLocation(ev.target.value)
               }}
@@ -130,6 +139,7 @@ export default function ProfessionalExp({
             <input
               type="text"
               id="desc"
+              value={desc}
               onChange={(ev) => {
                 setDesc(ev.target.value)
               }}
