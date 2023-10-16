@@ -74,8 +74,18 @@ input {
   display: flex;
 }
 
+
+.section > div > div > div {
+  display: flex;
+  align-items: center;
+}
+
 .editbtn {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.deletebtn {
+  color: rgb(255, 49, 49);
 }

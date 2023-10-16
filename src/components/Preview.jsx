@@ -43,7 +43,7 @@ export default function Preview({
           <h2>Education</h2>
           <ul>
             {education.map((card) => (
-              <li key={card.id}>
+              <li key={card.id} className="lisec1">
                 <h3>
                   <b>{card.degree}</b>, <i>{card.school}</i>
                 </h3>

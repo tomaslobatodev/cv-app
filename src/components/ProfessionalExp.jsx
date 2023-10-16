@@ -1,20 +1,18 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
 import "../styles/Section.css"
-import { Check } from "lucide-react"
+import { Check, PenSquare, Trash2 } from "lucide-react"
 
 export default function ProfessionalExp({
-  job,
   setJob,
-  company,
   setCompany,
-  time,
   setTime,
-  location,
   setLocation,
-  desc,
   setDesc,
+  profExp,
   save,
+  edit,
+  remove,
 }) {
   const [dropped, setDropped] = useState(false)
 
@@ -61,6 +59,30 @@ export default function ProfessionalExp({
         </button>
         Professional Experience
       </h2>
+      <div>
+        {profExp
+          ? profExp.map((card) => {
+              return (
+                <div key={card.id}>
+                  <span>
+                    {card.job}, {card.company}
+                  </span>
+                  <div>
+                    <button className="editbtn" onClick={() => edit(card.id)}>
+                      <PenSquare />
+                    </button>
+                    <button
+                      className="deletebtn"
+                      onClick={() => remove(card.id)}
+                    >
+                      <Trash2 />
+                    </button>
+                  </div>
+                </div>
+              )
+            })
+          : null}
+      </div>
       {dropped ? (
         <ul>
           <li>
@@ -68,7 +90,6 @@ export default function ProfessionalExp({
             <input
               type="text"
               id="job"
-              defaultValue={job}
               onChange={(ev) => {
                 setJob(ev.target.value)
               }}
@@ -79,18 +100,16 @@ export default function ProfessionalExp({
             <input
               type="text"
               id="company"
-              defaultValue={company}
               onChange={(ev) => {
                 setCompany(ev.target.value)
               }}
             />
           </li>
           <li>
-            <label htmlFor="time">Time (month year - month year)</label>
+            <label htmlFor="time">Time</label>
             <input
               type="text"
               id="time"
-              defaultValue={time}
               onChange={(ev) => {
                 setTime(ev.target.value)
               }}
@@ -101,7 +120,6 @@ export default function ProfessionalExp({
             <input
               type="text"
               id="location"
-              defaultValue={location}
               onChange={(ev) => {
                 setLocation(ev.target.value)
               }}
@@ -109,15 +127,16 @@ export default function ProfessionalExp({
           </li>
           <li>
             <label htmlFor="desc">Description</label>
-            <input type="text" 
-            id="desc"
-            defaultValue={desc}
-            onChange = {(ev)=>{
-              setDesc(ev.target.value)
-            }}/>
+            <input
+              type="text"
+              id="desc"
+              onChange={(ev) => {
+                setDesc(ev.target.value)
+              }}
+            />
           </li>
           <button className="savebtn" onClick={() => save()}>
-            Save <Check />
+            Save <Check className="icon" />
           </button>
         </ul>
       ) : null}
@@ -137,4 +156,7 @@ ProfessionalExp.propTypes = {
   desc: PropTypes.string,
   setDesc: PropTypes.func,
   save: PropTypes.func,
+  profExp: PropTypes.array,
+  edit: PropTypes.func,
+  remove: PropTypes.func,
 }

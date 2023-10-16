@@ -1,19 +1,17 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
 import "../styles/Section.css"
-import { Check, PenSquare } from "lucide-react"
+import { Check, PenSquare, Trash2 } from "lucide-react"
 
 export default function Education({
-  degree,
   setDegree,
-  school,
   setSchool,
-  time,
   setTime,
-  location,
   setLocation,
   education,
   save,
+  edit,
+  remove,
 }) {
   const [dropped, setDropped] = useState(false)
 
@@ -65,8 +63,20 @@ export default function Education({
           ? education.map((card) => {
               return (
                 <div key={card.id}>
-                  <span>{card.degree}, {card.school}</span>
-                  <button className="editbtn"><PenSquare /></button>
+                  <span>
+                    {card.degree}, {card.school}
+                  </span>
+                  <div>
+                    <button className="editbtn" onClick={() => edit(card.id)}>
+                      <PenSquare />
+                    </button>
+                    <button
+                      className="deletebtn"
+                      onClick={() => remove(card.id)}
+                    >
+                      <Trash2 />
+                    </button>
+                  </div>
                 </div>
               )
             })
@@ -79,7 +89,6 @@ export default function Education({
             <input
               type="text"
               id="degree"
-              defaultValue={degree}
               onChange={(ev) => {
                 setDegree(ev.target.value)
               }}
@@ -90,18 +99,16 @@ export default function Education({
             <input
               type="text"
               id="school"
-              defaultValue={school}
               onChange={(ev) => {
                 setSchool(ev.target.value)
               }}
             />
           </li>
           <li>
-            <label htmlFor="time">Time (month year - month year)</label>
+            <label htmlFor="time">Time</label>
             <input
               type="text"
               id="time"
-              defaultValue={time}
               onChange={(ev) => {
                 setTime(ev.target.value)
               }}
@@ -112,7 +119,6 @@ export default function Education({
             <input
               type="text"
               id="location"
-              defaultValue={location}
               onChange={(ev) => {
                 setLocation(ev.target.value)
               }}
@@ -138,4 +144,6 @@ Education.propTypes = {
   location: PropTypes.string,
   setLocation: PropTypes.func,
   save: PropTypes.func,
+  edit: PropTypes.func,
+  remove: PropTypes.func,
 }

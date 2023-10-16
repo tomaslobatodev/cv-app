@@ -1,5 +1,6 @@
 .preview {
-  width: 600px;
+  width: 700px;
+  max-width: 750px;
   height: 1200px;
   background-color: white;
   color: black;
@@ -43,8 +44,6 @@ span {
   width: 16px;
 }
 
-
-
 .sec {
   width: 90%;
   min-height: 80px;
@@ -63,8 +62,9 @@ span {
   gap: 24px
 }
 
-.sec li {
+.sec ul .lisec1 {
   display: flex;
+  flex-direction: row;
   align-items: start;
   justify-content: space-between;
 }
@@ -80,7 +80,7 @@ span {
   align-items: end;
 }
 
-.sec div {
+.lisec2 div {
   width: 100%;
   display: flex;
   justify-content: space-between;
